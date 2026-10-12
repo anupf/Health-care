@@ -1,31 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proposed Her</title>
-
-  <link rel="stylesheet" href="./style.css" />
+  <meta charset="UTF-8">
+  <title>Greetings for Loved Ones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      margin: 0;
+      padding: 50px;
+    }
+    .page {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 25px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    .yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .no {
+      background-color: #f44336;
+      color: white;
+      position: relative;
+    }
+    .bounce {
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(50px, -20px); }
+      50%  { transform: translate(-50px, 20px); }
+      75%  { transform: translate(30px, -10px); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="tenor-gif-embed" data-postid="22885016" data-share-method="host" data-aspect-ratio="1.04918"
-      data-width="100%">
-      <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a>from
-      <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
-    </div>
-    
-    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-    <h1>Do you love me? 🤗</h1>
-    <p>Chiku is all yours</p>
 
-    <div class="btn">
-      <a href="yes.html">Yes</a>
-      <a href="no1.html">No</a>
-    </div>
+  <!-- Page 1 -->
+  <div id="page1" class="page active">
+    <h1>💊 How are you feeling Gadhu?</h1>
+    <button class="yes" onclick="nextPage(2)">Good 😊</button>
+    <button class="no" onclick="nextPage(2)">Not Good 🙁</button>
   </div>
-</body>
 
+  <!-- Page 2 -->
+  <div id="page2" class="page">
+    <h1>🤔 Khasi Jukham Thik huaa ke nahi?</h1>
+    <button class="yes" onclick="nextPage(3)">Thik Hai 😍</button>
+    <button class="no" onclick="nextPage(3)">Thik nahi hai 😒</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div id="page3" class="page">
+    <h1>🤒 Doctor ke pass jake aye the ke nahi?👨‍⚕️</h1>
+    <button class="yes" onclick="nextPage(4)">Ha 😁</button>
+    <button class="no" onclick="nextPage(3)">Nahi 😒</button>
+  </div>
+
+  <!-- Page 4 -->
+  <div id="page4" class="page">
+    <h1>🎉 Apna khayal rakho, Medicines wakt pe lo.</h1>
+    <h2>🚑 Apni akad me jakadna nahi hai,
+            Faltuki zid pe adna nahi hai,
+    
+            Dhyan rakhana hai khudka iskadar,
+            Ke fir kabhi bimar padna nahi hai.</h2>
+    <h3>✨ Blessings Gadhu!! ✨</h3>
+    <p style="font-size:40px;">🎉💞🥳🤗</p>
+  </div>
+
+  <script>
+    function nextPage(pageNumber) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      // Show selected page
+      document.getElementById('page' + pageNumber).classList.add('active');
+    });
+
+    });
+  </script>
+
+</body>
 </html>
